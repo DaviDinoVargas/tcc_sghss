@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SGHSS - Prontuários</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style-prontuario.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" aria-label="Menu de navegação">
+            <div class="logo">
+                <img src="assets/logo-vidaplus.svg" alt="VidaPlus Saúde" />
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <span class="material-icons">dashboard</span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agenda.html">
+                            <span class="material-icons">calendar_month</span>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pacientes.html">
+                            <span class="material-icons">groups</span>
+                            <span>Pacientes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prontuarios.html" class="active" aria-current="page">
+                            <span class="material-icons">folder_shared</span>
+                            <span>Prontuários</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="telemedicina.html">
+                            <span class="material-icons">video_call</span>
+                            <span>Teleconsulta</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">AC</div>
+                <div class="user-info">
+                    <strong>Dra. Ana Costa</strong>
+                    <span>Cardiologia</span>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <h1>Prontuários Eletrônicos</h1>
+                    <p>Registros médicos dos pacientes</p>
+                </div>
+            </header>
+            <div class="search-container">
+                <div style="position: relative; flex: 1;">
+                    <span class="material-icons search-icon">search</span>
+                    <input type="text" class="search-input" placeholder="Buscar em prontuários..." id="search-input" />
+                </div>
+                <div class="filter-controls">
+                    <select class="filter-select" id="filter-patient">
+                        <option value="">Todos os pacientes</option>
+                        <option value="Alex Silva">Alex Silva</option>
+                        <option value="Maria Oliveira">Maria Oliveira</option>
+                    </select>
+                    <select class="filter-select" id="filter-type">
+                        <option value="">Todos os tipos</option>
+                        <option value="Consulta">Consulta</option>
+                        <option value="Exame">Exame</option>
+                        <option value="Teleconsulta">Teleconsulta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="medical-records-list" id="records-container"></div>
+        </main>
+    </div>
+
+    <div class="modal" id="record-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close"><span class="material-icons">close</span></button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Detalhes do Prontuário</h2>
+                <div class="record-date" id="modal-date">14/07/2025</div>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modal-cancel">Fechar</button>
+                <button class="btn btn-success" id="download-pdf">Baixar PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script-prontuario.js"></script>
+</body>
+</html>

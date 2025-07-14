@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SGHSS - Pacientes</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles-paciente.css" />
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" aria-label="Menu de navegação">
+            <div class="logo">
+                <button class="hamburger-btn" id="toggle-sidebar">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="logo-content">
+                    <span class="material-icons logo-icon">local_hospital</span>
+                    <span class="logo-text">VidaPlus</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="material-icons">dashboard</span><span>Dashboard</span></a></li>
+                    <li><a href="agenda.html"><span class="material-icons">event</span><span>Agenda</span></a></li>
+                    <li><a href="pacientes.html" class="active" aria-current="page"><span class="material-icons">people</span><span>Pacientes</span></a></li>
+                    <li><a href="prontuarios.html"><span class="material-icons">description</span><span>Prontuários</span></a></li>
+                    <li><a href="telemedicina.html"><span class="material-icons">video_call</span><span>Teleconsulta</span></a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">AC</div>
+                <div class="user-info">
+                    <strong>Dra. Ana Costa</strong>
+                    <span>Cardiologia</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <h1>Pacientes</h1>
+                    <p>Lista de pacientes cadastrados</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-primary" id="add-patient">
+                        <span class="material-icons">add</span> Novo Paciente
+                    </button>
+                </div>
+            </header>
+
+            <div class="search-container">
+                <span class="material-icons search-icon">search</span>
+                <input type="text" class="search-input" placeholder="Buscar pacientes..." id="search-input" />
+            </div>
+
+            <table class="patients-table" aria-label="Tabela de pacientes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Idade</th>
+                        <th>Condições</th>
+                        <th>Última Consulta</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="patients-list">
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="js/script-paciente.js"></script>
+</body>
+</html>

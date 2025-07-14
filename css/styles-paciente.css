@@ -1,0 +1,357 @@
+:root {
+    --primary: #2563EB;
+    --primary-light: #EFF6FF;
+    --primary-dark: #1D4ED8;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-500: #6B7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --critical: #DC2626;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background-color: var(--white);
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray-700);
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.hamburger-btn:hover {
+    background-color: var(--gray-100);
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 1.5rem 0;
+}
+
+.main-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: var(--gray-700);
+    transition: all 0.3s;
+    gap: 0.75rem;
+}
+
+.main-nav li a:hover {
+    background-color: var(--gray-100);
+    color: var(--primary);
+}
+
+.main-nav li a.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    font-weight: 600;
+}
+
+.main-nav li a .material-icons {
+    font-size: 1.25rem;
+}
+
+.user-profile {
+    margin-top: auto;
+    padding: 1.5rem;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info strong {
+    font-size: 0.9rem;
+}
+
+.user-info span {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-left h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.header-left p {
+    color: var(--gray-500);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 3rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Patients Table */
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.patients-table th {
+    background-color: var(--gray-100);
+    padding: 1rem;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--gray-700);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.patients-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+}
+
+.patients-table tbody tr:hover {
+    background-color: var(--gray-100);
+}
+
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.action-btn:hover {
+    background-color: var(--gray-200);
+}
+
+.action-btn.view {
+    color: var(--primary);
+}
+
+.action-btn.edit {
+    color: var(--warning);
+}
+
+.action-btn.delete {
+    color: var(--critical);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 80px;
+    }
+    
+    .logo-content .logo-text,
+    .main-nav span,
+    .user-info {
+        display: none;
+    }
+    
+    .logo {
+        justify-content: center;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .hamburger-btn {
+        margin-right: 0;
+    }
+    
+    .main-nav li a {
+        justify-content: center;
+        padding: 1rem 0;
+    }
+    
+    .main-nav li a.active {
+        border-left: none;
+        border-right: 4px solid var(--primary);
+    }
+    
+    .user-profile {
+        justify-content: center;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .header-right {
+        width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .patients-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

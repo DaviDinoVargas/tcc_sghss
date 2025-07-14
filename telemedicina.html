@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGHSS - Teleconsulta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-teleconsulta.css">
+</head>
+<body>
+    <div class="telemedicine-container">
+        <!-- Header -->
+        <header class="telemedicine-header">
+            <div class="patient-info">
+                <h1>Teleconsulta</h1>
+                <div class="patient-details">
+                    <div class="patient-avatar">CS</div>
+                    <div>
+                        <h2>Alex Silva</h2>
+                        <p>68 anos · Insuficiência cardíaca</p>
+                    </div>
+                </div>
+            </div>
+            <div class="call-info">
+                <div class="call-status">
+                    <span class="status-dot"></span>
+                    <span>Conectado</span>
+                </div>
+                <div class="call-duration">22:45</div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="telemedicine-main">
+            <div class="video-container">
+                <div class="video-remote">
+                    <div class="video-overlay">Alex Silva</div>
+                </div>
+                <div class="video-local"></div>
+            </div>
+            
+            <div class="telemedicine-controls">
+                <button class="control-btn" id="toggle-mic" aria-label="Mutar áudio">
+                    <span class="material-icons">mic</span>
+                </button>
+                <button class="control-btn" id="toggle-camera" aria-label="Desativar vídeo">
+                    <span class="material-icons">videocam</span>
+                </button>
+                <button class="control-btn" aria-label="Compartilhar tela">
+                    <span class="material-icons">screen_share</span>
+                </button>
+                <button class="control-btn" aria-label="Abrir chat">
+                    <span class="material-icons">chat</span>
+                </button>
+                <button class="control-btn end-call" aria-label="Desligar">
+                    <span class="material-icons">call_end</span>
+                </button>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="telemedicine-sidebar">
+            <div class="sidebar-section">
+                <h3>Prontuário</h3>
+                <div class="medical-history">
+                    <div class="history-item">
+                        <div class="history-date">12/07/2025</div>
+                        <div class="history-content">
+                            <strong>Consulta de rotina</strong>
+                            <p>Pressão arterial: 140/90 mmHg</p>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-date">05/06/2025</div>
+                        <div class="history-content">
+                            <strong>Eletrocardiograma</strong>
+                            <p>Resultados dentro dos parâmetros</p>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-date">20/05/2025</div>
+                        <div class="history-content">
+                            <strong>Ajuste de medicação</strong>
+                            <p>Dose de Captopril aumentada para 50mg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Prescrição</h3>
+                <div class="prescription-form">
+                    <textarea placeholder="Descreva a prescrição médica..."></textarea>
+                    <button class="btn-primary">
+                        <span class="material-icons">description</span>
+                        Emitir Receita
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <script src="js/script-teleconsulta.js"></script>
+</body>
+</html>

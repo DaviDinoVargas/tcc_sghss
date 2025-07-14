@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGHSS - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" aria-label="Menu de navegação">
+           <div class="logo">
+    <button class="hamburger-btn" id="toggle-sidebar">
+        <span class="material-icons">menu</span>
+    </button>
+    <div class="logo-content">
+        <span class="material-icons logo-icon">local_hospital</span>
+        <span class="logo-text">VidaPlus</span>
+    </div>
+</div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="active" aria-current="page">
+                            <span class="material-icons">dashboard</span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agenda.html">
+                            <span class="material-icons">event</span>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pacientes.html">
+                            <span class="material-icons">people</span>
+                            <span>Pacientes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-icons">description</span>
+                            <span>Prontuários</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-icons">video_call</span>
+                            <span>Teleconsulta</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">
+                    <div class="avatar-text">AC</div>
+                </div>
+                <div class="user-info">
+                    <strong>Dra. Ana Costa</strong>
+                    <span>Cardiologia</span>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Bem-vinda, Dra. Ana. Hoje é <span id="current-date">14 de Julho de 2025</span></p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn" aria-label="Notificações">
+                        <div class="notification-count">3</div>
+                        <span class="material-icons">notifications</span>
+                    </button>
+                    <button class="user-menu-btn" aria-label="Menu do usuário" onclick="window.location.href='perfil-usuario.html'">AC</button>
+                </div>
+            </header>
+            <div class="alert-banner critical">
+                <div class="alert-content">
+                    <div class="alert-icon">!</div>
+                    <div class="alert-text">
+                        <h3>Paciente em estado crítico</h3>
+                        <p>Alex Silva - Leito 302 - Pressão arterial: 190/110 mmHg</p>
+                    </div>
+                </div>
+                <button class="btn-alert">Ver detalhes</button>
+            </div>
+            <section class="dashboard-section">
+                <h2>Consultas de Hoje</h2>
+                <div class="appointments-grid">
+                    <div class="appointment-card">
+                        <div class="appointment-header">
+                            <span class="badge upcoming">Agendada</span>
+                            <span class="appointment-time">09:00 - 09:30</span>
+                        </div>
+                        <div class="appointment-body">
+                            <h3>Maria Oliveira</h3>
+                            <p>Consulta de rotina</p>
+                            <div class="patient-info">
+                                <span>65 anos</span>
+                                <span>Hipertensão</span>
+                            </div>
+                        </div>
+                        <div class="appointment-footer">
+                            <button class="btn-outline">Detalhes</button>
+                            <button class="btn-primary">Iniciar</button>
+                        </div>
+                    </div>
+                    <div class="appointment-card">
+                        <div class="appointment-header">
+                            <span class="badge now">Em andamento</span>
+                            <span class="appointment-time">10:00 - 10:45</span>
+                        </div>
+                        <div class="appointment-body">
+                            <h3>João Mendes</h3>
+                            <p>Acompanhamento pós-operatório</p>
+                            <div class="patient-info">
+                                <span>72 anos</span>
+                                <span>Diabetes tipo 2</span>
+                            </div>
+                        </div>
+                        <div class="appointment-footer">
+                            <button class="btn-outline">Detalhes</button>
+                            <button class="btn-primary">Continuar</button>
+                        </div>
+                    </div>
+                    <div class="appointment-card">
+                        <div class="appointment-header">
+                            <span class="badge critical">Urgente</span>
+                            <span class="appointment-time">11:30</span>
+                        </div>
+                        <div class="appointment-body">
+                            <h3>Alex Silva</h3>
+                            <p>Emergência cardíaca</p>
+                            <div class="patient-info">
+                                <span>68 anos</span>
+                                <span>Insuficiência cardíaca</span>
+                            </div>
+                        </div>
+                        <div class="appointment-footer">
+                            <button class="btn-outline">Prontuário</button>
+                            <button class="btn-critical">Atender</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dashboard-section">
+                <h2>Indicadores</h2>
+                <div class="indicators-grid">
+                    <div class="indicator-card">
+                        <div class="indicator-header">
+                            <span class="material-icons indicator-icon">groups</span>
+                            <h3>Pacientes Hoje</h3>
+                        </div>
+                        <div class="indicator-value">12</div>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="indicator-header">
+                            <span class="material-icons indicator-icon">schedule</span>
+                            <h3>Tempo Médio</h3>
+                        </div>
+                        <div class="indicator-value">22 min</div>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="indicator-header">
+                            <span class="material-icons indicator-icon">warning</span>
+                            <h3>Casos Urgentes</h3>
+                        </div>
+                        <div class="indicator-value">3</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script-dashboard.js"></script>
+</body>
+</html>
